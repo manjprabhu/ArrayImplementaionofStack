@@ -4,13 +4,14 @@ import android.util.Log;
 
 public class Stack {
 
+    private final String TAG = Stack.class.getSimpleName();
     int top;
     int capacity = 10;
     int[] array = new int[capacity];
 
     public void push(int element) {
         if(top >= capacity-1) {
-            Log.v("Stack:","Stack overflow");
+            Log.v(TAG,"Stack overflow");
             return;
         }
         top++;
@@ -19,27 +20,27 @@ public class Stack {
 
     public boolean pop() {
         if(top == -1) {
-            Log.v("Stack:","Stack underflow");
+            Log.v(TAG,"Stack underflow");
             return false;
         }
 
         int x =  array[top];
         top--;
-        Log.v("Stack:","Element is removed from stack:"+x);
+        Log.v(TAG,"Element is removed from stack:"+x);
         return true;
     }
 
     public void display() {
         for(int x=top;x>=1;x--) {
-            Log.v("Stack:","Element in array:"+array[x]);
+            Log.v(TAG,"Element in array:"+array[x]);
         }
     }
 
     public void peek() {
         if(top == -1) {
-            Log.v("Stack:","Empty:");
+            Log.v("TAG","Empty:");
         }
         int topelement = array[top];
-        Log.v("Stack:","Top element:"+topelement);
+        Log.v(TAG,"Top element:"+topelement);
     }
 }

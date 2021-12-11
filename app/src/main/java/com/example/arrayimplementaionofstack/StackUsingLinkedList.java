@@ -32,6 +32,8 @@ public class StackUsingLinkedList {
     private class Node {
         int data;
         Node link;
+
+        
     }
 }
 
